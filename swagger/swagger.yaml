@@ -1,0 +1,37 @@
+consumes:
+- application/json
+- application/xml
+- application/gob
+- application/x-gob
+host: localhost:8080
+info:
+  description: 勉強会情報取得
+  title: The study-event API
+  version: ""
+paths:
+  /search/{text}:
+    get:
+      description: 複数の勉強会サイトをキーワード検索してレスポンスを返す
+      operationId: keywords#search
+      parameters:
+      - description: キーワード
+        in: path
+        name: text
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+      schemes:
+      - http
+      summary: search keywords
+      tags:
+      - keywords
+produces:
+- application/json
+- application/xml
+- application/gob
+- application/x-gob
+schemes:
+- http
+swagger: "2.0"
